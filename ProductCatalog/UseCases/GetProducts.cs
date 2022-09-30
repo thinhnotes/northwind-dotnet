@@ -7,11 +7,20 @@ public struct GetProducts
 {
     public readonly record struct Query : IListQuery
     {
-        public List<string> Includes { get; init; } = new(new[] {"SupplierInfo", "Category"});
-        public List<FilterModel> Filters { get; init; } = new();
-        public List<string> Sorts { get; init; } = new();
-        public int Page { get; init; } = 1;
-        public int PageSize { get; init; } = 20;
+        public List<string> Includes { get; init; }
+        public List<FilterModel> Filters { get; init; }
+        public List<string> Sorts { get; init; }
+        public int Page { get; init; }
+        public int PageSize { get; init; }
+
+        public Query()
+        {
+            Includes = new(new[] { "SupplierInfo", "Category" });
+            Filters = new();
+            Sorts = new();
+            Page = 1;
+            PageSize = 20;
+        }
 
         internal class Validator : AbstractValidator<Query>
         {
