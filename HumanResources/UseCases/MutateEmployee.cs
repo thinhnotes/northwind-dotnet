@@ -7,8 +7,8 @@ public sealed class MutateEmployee
 {
     public readonly record struct CreateCommand : ICreateCommand
     {
-        public string FirstName { get; init; } = default!;
-        public string LastName { get; init; } = default!;
+        public string FirstName { get; init; }
+        public string LastName { get; init; }
 
         public Employee ToEntity()
         {

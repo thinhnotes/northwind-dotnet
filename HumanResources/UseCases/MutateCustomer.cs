@@ -7,7 +7,7 @@ public sealed class MutateCustomer
 {
     public readonly record struct CreateCommand : ICreateCommand
     {
-        public string CompanyName { get; init; } = default!;
+        public string CompanyName { get; init; } 
 
         public Customer ToEntity()
         {

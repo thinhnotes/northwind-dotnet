@@ -7,7 +7,7 @@ public sealed class MutateShipper
 {
     public readonly record struct CreateCommand : ICreateCommand
     {
-        public string CompanyName { get; init; } = default!;
+        public string CompanyName { get; init; }
 
         public Shipper ToEntity()
         {
