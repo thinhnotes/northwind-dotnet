@@ -26,5 +26,5 @@
 	// 	    "version": "1.0.7"
 	// 	}
 	// },
-    "postStartCommand": "dotnet tool install -g Microsoft.Tye --version 0.11.0-alpha.22111.1"
+    "postStartCommand": "dotnet tool install -g Microsoft.Tye --version 0.11.0-alpha.22111.1 && sudo -- sh -c \"echo '127.0.0.1    kafka' >> /etc/hosts\" "
 }
