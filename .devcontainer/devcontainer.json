@@ -2,7 +2,7 @@
     "name": "Dotnet with Tye",
     // Set *default* container specific settings.json values on container create.
     "remoteEnv": {
-        "PATH": "${containerEnv:PATH}:/root/.dotnet/tools"
+        "PATH": "${containerEnv:PATH}:$PATH:/home/codespace/.dotnet/tools"
     },
     "customizations": {
         // Configure properties specific to VS Code.
@@ -13,5 +13,5 @@
 			]
         }
     },
-    "postStartCommand": "RUN dotnet tool install -g Microsoft.Tye"
+    "postStartCommand": "dotnet tool install -g Microsoft.Tye --version 0.11.0-alpha.22111.1"
 }
