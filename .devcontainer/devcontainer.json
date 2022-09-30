@@ -1,0 +1,20 @@
+{
+    "name": "Java",
+    // Set *default* container specific settings.json values on container create.
+    "settings": {
+        "java.home": "/docker-java-home"
+    },
+    "customizations": {
+        // Configure properties specific to VS Code.
+        "vscode": {
+            "extensions": [
+				"jebbs.plantuml",
+				"ciarant.vscode-structurizr",
+				"systemticks.c4-dsl-extension@3.1.7",
+				"humao.rest-client",
+				"ms-azuretools.vscode-tye"
+			]
+        }
+    },
+    "postCreateCommand": "dotnet tool install -g Microsoft.Tye --version \"0.11.0-alpha.22111.1\" && export PATH=\"$PATH:/home/codespace/.dotnet/tools\""
+}
