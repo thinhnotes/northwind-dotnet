@@ -1,11 +1,12 @@
 {
     "name": "Dotnet with Tye",
     // Set *default* container specific settings.json values on container create.
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+    // "build": {
+    //     "dockerfile": "Dockerfile"
+    // },
     "remoteEnv": {
-        "PATH": "${containerEnv:PATH}:$PATH:/home/codespace/.dotnet/tools"
+        "PATH": "${containerEnv:PATH}:$PATH:/root/.dotnet/tools"
+        // "PATH": "${containerEnv:PATH}:$PATH:/home/codespace/.dotnet/tools"
     },
     "customizations": {
         // Configure properties specific to VS Code.
@@ -20,7 +21,10 @@
     },
     "features": {
 		"docker-in-docker": "latest",
-		"github-cli": "latest"
+		"github-cli": "latest",
+        "ghcr.io/devcontainers/features/dotnet:1": {
+            "version": "1.0.7"
+        }
 	},
     "postStartCommand": "dotnet tool install -g Microsoft.Tye --version 0.11.0-alpha.22111.1"
 }
