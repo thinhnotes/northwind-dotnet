@@ -9,7 +9,9 @@
         "vscode": {
             "extensions": [
 				"humao.rest-client",
-				"ms-azuretools.vscode-tye"
+				"ms-azuretools.vscode-tye",
+				"ms-dotnettools.csharp",
+				"ms-azuretools.vscode-docker"
 			]
         }
     },
