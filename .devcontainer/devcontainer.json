@@ -10,5 +10,6 @@
 				"ms-azuretools.vscode-tye"
 			]
         }
-    }
+    },
+    "postStartCommand": "export PATH=\"$PATH:/root/.dotnet/tools\""
 }
