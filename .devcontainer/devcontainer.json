@@ -1,6 +1,9 @@
 {
     "name": "Dotnet with Tye",
     // Set *default* container specific settings.json values on container create.
+    "build": {
+        "dockerfile": "dockerfile"
+    },
     "remoteEnv": {
         "PATH": "${containerEnv:PATH}:$PATH:/home/codespace/.dotnet/tools"
     },
@@ -8,12 +11,16 @@
         // Configure properties specific to VS Code.
         "vscode": {
             "extensions": [
-				"humao.rest-client",
-				"ms-azuretools.vscode-tye",
-				"ms-dotnettools.csharp",
-				"ms-azuretools.vscode-docker"
-			]
+                "humao.rest-client",
+                "ms-azuretools.vscode-tye",
+                "ms-dotnettools.csharp",
+                "ms-azuretools.vscode-docker"
+            ]
         }
     },
+    "features": {
+		"docker-in-docker": "latest",
+		"github-cli": "latest"
+	},
     "postStartCommand": "dotnet tool install -g Microsoft.Tye --version 0.11.0-alpha.22111.1"
 }
