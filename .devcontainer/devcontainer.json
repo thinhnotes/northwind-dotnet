@@ -2,6 +2,9 @@
     "name": "Dotnet with Tye",
     // Set *default* container specific settings.json values on container create.
     "build": { "dockerfile": "Dockerfile" },
+    "remoteEnv": {
+        "PATH": "${containerEnv:PATH}:/root/.dotnet/tools"
+    },
     "customizations": {
         // Configure properties specific to VS Code.
         "vscode": {
@@ -10,6 +13,6 @@
 				"ms-azuretools.vscode-tye"
 			]
         }
-    },
-    "postStartCommand": "export PATH=\"$PATH:/root/.dotnet/tools\""
+    }
+    // "postStartCommand": "export PATH=\"$PATH:/root/.dotnet/tools\""
 }
